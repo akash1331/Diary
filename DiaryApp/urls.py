@@ -25,6 +25,11 @@ urlpatterns = [
     path('entries',views.entries,name='entries'), #display entries url
     path('update_entry/<int:pk>',views.update_entry,name = 'update_entry'), #update entry url
     path('delete_entry/<int:pk>',views.delete_entry,name = 'delete_entry'), #delete entry url
+
+    path('login',views.login,name='login'),
+    path('signup',views.signup,name='signup'),
+    path('registered',views.registered,name='registered'),
+    path('loggedout',views.loggedout,name='loggedout'),
 ]
 
 

@@ -7,5 +7,5 @@ class DiaryAdminSite(admin.ModelAdmin):
     list_display = ['text','datesave']
     list_filter = ['datesave']
 
-
+admin.site.site_header = 'MyDiary Admin'
 admin.site.register(diaryModel,DiaryAdminSite)
