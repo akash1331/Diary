@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'DiaryApp.apps.SuitConfig',
+    # 'DiaryApp.apps.SuitConfig',
     'DiaryApp',
     'django.contrib.admin',
     'django.contrib.auth',

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -11,20 +11,16 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
 
-    <title>Delete Entry | MyDiary</title>
-
-    <style>
-            .container-fluid {
-            margin-left: 0px;
-    </style>
-
+    <title>Add Entry | MyDiary</title>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <img src="/static/1.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+        <img src="/static/logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
         <a class="navbar-brand" href="/addentry"> MyDiary</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -36,17 +32,29 @@
                     </li>
                 </ul>
         </div>
+        <!-- Default dropstart button -->
+        <div class="dropdown">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Settings
+        </button>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item" href="/loggedout">Logout</a></li>
+            </ul>
+        </div>
     </div>
   </nav>
 
-    <div class="container-fluid">
-        <h5>Confirm to delete?</h5>
-        <form action="#" method="post">
-            {% csrf_token %}
-            <input class="btn btn-success" type="submit" name='confirm' value="Yes">
-            <a class="btn btn-warning" href="/entries">Cancel</a>
-        </form>
-    </div>
+    <center>
+      <br>
+      <form method="post" action="#" style="width: 60%;">
+          {% csrf_token %}
+          <b>
+              {{form.as_p}}
+          </b>
+          <button class="btn btn-info">
+              Save Entry
+          </button>
+      </form>
+  </center>
+  <br>  
 </body>
-
 </html>

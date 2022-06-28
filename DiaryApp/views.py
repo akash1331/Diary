@@ -16,7 +16,7 @@ def entries(request):
         entry = diaryModel.objects.all()
         context = {'entry':entry}
         return render(request,'entries.html',context)
-# -------------------------------------------------------------
+# <------------------------------------------------------------->
 
 
 # <-------------------add entry --------------------------->
